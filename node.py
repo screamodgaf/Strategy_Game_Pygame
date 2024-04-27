@@ -1,6 +1,6 @@
+from mover import Mover
 import pygame
-
-class Node(pygame.Rect):
+class Node(Mover):
     def __init__(self, x, y, width, height):
         #This node's cost of the path f(n)=g(n)+h(n)
         self.f = 0
@@ -59,7 +59,6 @@ class Node(pygame.Rect):
         # Draw the rectangle on the screen using the specified color
         pygame.draw.rect(screen, color, pygame.Rect(self.x, self.y,FIELD_SIZE-grid_thickness,
                                                                    FIELD_SIZE-grid_thickness))
-
 
     def determineNeighboursOfNode(self, worldRectsList, MATRIX_HEIGHT, MATRIX_WIDTH):
         x = int(self.x/self.size[0]) #100

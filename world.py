@@ -11,7 +11,7 @@ class World():
         self.screen = screen
 
         self.createMatrix()
-        self.makeRandomObstackles()
+        self.makeRandomObstacles()
 
     def createMatrix(self):
         '''
@@ -28,6 +28,7 @@ class World():
         FIELD_SIZE = 30
         '''
         self.matrix = [0] * self.MATRIX_HEIGHT * self.MATRIX_WIDTH
+
 
     def associateMatrixToDrawableRects(self):
         worldNodesList = []
@@ -50,8 +51,8 @@ class World():
 
         return worldNodesList
 
-    def makeRandomObstackles(self):
-        for _ in range(200):
+    def makeRandomObstacles(self):
+        for _ in range(100):
             x = random.randint(1, self.MATRIX_WIDTH - 1)
             y = random.randint(1, self.MATRIX_HEIGHT - 1)
             self.matrix[x + y * self.MATRIX_WIDTH] = 1
